@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        LUNOVA | AI Lung Cancer Detection
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                L
+            </div>
+
+            <div class="brand-text">
+
+                <h2>
+                    LUNOVA
+                </h2>
+
+                <span>
+                    AI Lung Detection
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav">
+
+
+            <div class="nav-group">
+
+                <span class="nav-group-title">
+                    MENU UTAMA
+                </span>
+
+
+                <a
+                    href="#top"
+                    class="nav-link active"
+                >
+
+                    <span class="nav-icon">
+                        ⌂
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#upload-section"
+                    class="nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ＋
+                    </span>
+
+                    <span>
+                        Upload & Analyze
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#result-section"
+                    class="nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ◈
+                    </span>
+
+                    <span>
+                        Hasil Analisis
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#history-section"
+                    class="nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ▤
+                    </span>
+
+                    <span>
+                        Riwayat Analisis
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="nav-group">
+
+                <span class="nav-group-title">
+                    SISTEM
+                </span>
+
+
+                <a
+                    href="#clinical-section"
+                    class="nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ✚
+                    </span>
+
+                    <span>
+                        Clinical Support
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#model-section"
+                    class="nav-link"
+                >
+
+                    <span class="nav-icon">
+                        ▣
+                    </span>
+
+                    <span>
+                        Model Information
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- SIDEBAR FOOTER -->
+
+        <div class="sidebar-footer">
+
+
+            <!-- AI ENGINE -->
+
+            <div class="engine-card">
+
+                <small>
+                    AI ENGINE
+                </small>
+
+                <strong>
+                    Swin Transformer Tiny
+                </strong>
+
+                <span>
+                    OpenVINO™ • CPU
+                </span>
+
+            </div>
+
+
+            <!-- INTEL BRAND -->
+
+            <div class="intel-card">
+
+                <div class="intel-header">
+
+                    <strong class="intel-wordmark">
+                        intel
+                    </strong>
+
+                    <span class="intel-ai-badge">
+                        AI
+                    </span>
+
+                </div>
+
+                <strong class="intel-title">
+                    Intel® AI Technology
+                </strong>
+
+                <small>
+                    Powered by OpenVINO™
+                </small>
+
+            </div>
+
+
+            <!-- SYSTEM STATUS -->
+
+            <div class="online">
+
+                <span class="dot"></span>
+
+                <div>
+
+                    <strong id="systemText">
+                        Checking...
+                    </strong>
+
+                    <small>
+                        OpenVINO backend status
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main
+        class="main"
+        id="top"
+    >
+
+
+        <!-- MOBILE HEADER -->
+
+        <div class="mobile-header">
+
+            <button
+                id="menuToggle"
+                class="menu-button"
+                type="button"
+            >
+                ☰
+            </button>
+
+            <div>
+
+                <strong>
+                    LUNOVA
+                </strong>
+
+                <small>
+                    AI Lung Detection
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-title">
+
+                <span class="eyebrow">
+                    AI DIAGNOSTIC PLATFORM
+                </span>
+
+                <h1>
+                    LUNOVA
+                </h1>
+
+                <p>
+                    Intelligent Histopathology Analysis
+                    for Lung Cancer Detection
+                </p>
+
+
+                <!-- TECHNOLOGY BADGES -->
+
+                <div class="tech-badges">
+
+                    <span>
+                        Intel® AI
+                    </span>
+
+                    <span>
+                        OpenVINO™
+                    </span>
+
+                    <span>
+                        Swin Transformer
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- HEADER STATUS -->
+
+            <div class="header-status">
+
+
+                <div class="model-status">
+
+                    <span class="dot"></span>
+
+                    <div>
+
+                        <strong>
+                            AI Engine Ready
+                        </strong>
+
+                        <small>
+                            OpenVINO™ • CPU
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                
+        </header>
+
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section class="stats-grid">
+
+
+            <!-- TOTAL -->
+
+            <article class="stat-card">
+
+                <div class="stat-icon blue">
+                    ◈
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Total Analisis
+                    </span>
+
+                    <strong id="statTotal">
+                        0
+                    </strong>
+
+                    <small id="statTotalNote">
+                        Data realtime
+                    </small>
+
+                </div>
+
+            </article>
+
+
+            <!-- LUAD -->
+
+            <article class="stat-card">
+
+                <div class="stat-icon purple">
+                    ◉
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Adenocarcinoma
+                    </span>
+
+                    <strong id="statLuad">
+                        0
+                    </strong>
+
+                    <small id="statLuadNote">
+                        0% dari total
+                    </small>
+
+                </div>
+
+            </article>
+
+
+            <!-- LUSC -->
+
+            <article class="stat-card">
+
+                <div class="stat-icon orange">
+                    ◉
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Squamous Cell
+                    </span>
+
+                    <strong id="statLusc">
+                        0
+                    </strong>
+
+                    <small id="statLuscNote">
+                        0% dari total
+                    </small>
+
+                </div>
+
+            </article>
+
+
+            <!-- NORMAL -->
+
+            <article class="stat-card">
+
+                <div class="stat-icon green">
+                    ✓
+                </div>
+
+                <div class="stat-content">
+
+                    <span>
+                        Normal
+                    </span>
+
+                    <strong id="statNormal">
+                        0
+                    </strong>
+
+                    <small id="statNormalNote">
+                        0% dari total
+                    </small>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =================================================
+             UPLOAD & ANALYZE
+        ================================================== -->
+
+        <section
+            class="card upload-card"
+            id="upload-section"
+        >
+
+
+            <div class="section-head">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        INPUT CITRA
+                    </span>
+
+                    <h2>
+                        Upload & Analyze
+                    </h2>
+
+                    <p>
+                        Upload citra histopatologi H&E
+                        untuk dianalisis oleh model AI.
+                    </p>
+
+                </div>
+
+
+                <span class="ready-badge">
+
+                    <span class="dot"></span>
+
+                    OpenVINO Ready
+
+                </span>
+
+            </div>
+
+
+
+            <!-- FILE INPUT -->
+
+            <input
+                id="fileInput"
+                type="file"
+                accept=".jpg,.jpeg,.png,.tif,.tiff"
+                hidden
+            >
+
+
+
+            <div class="upload-layout">
+
+
+                <!-- DROP ZONE -->
+
+                <label
+                    class="drop-zone"
+                    id="dropZone"
+                    for="fileInput"
+                >
+
+                    <div class="upload-icon">
+                        ☁
+                    </div>
+
+                    <h3>
+                        Drag & Drop Citra Histopatologi
+                    </h3>
+
+                    <p>
+                        atau klik untuk memilih file
+                    </p>
+
+                    <span>
+                        JPG • JPEG • PNG • TIFF
+                        • Maksimal 20 MB
+                    </span>
+
+                </label>
+
+
+
+                <!-- PREVIEW -->
+
+                <div
+                    class="preview-panel"
+                    id="previewPanel"
+                    hidden
+                >
+
+                    <img
+                        id="previewImage"
+                        alt="Preview citra histopatologi"
+                    >
+
+                    <div class="preview-meta">
+
+                        <div>
+
+                            <span>
+                                File terpilih
+                            </span>
+
+                            <strong id="fileName">
+                                -
+                            </strong>
+
+                        </div>
+
+                        <button
+                            id="removeFile"
+                            type="button"
+                        >
+                            Hapus
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MODEL INFO -->
+
+                <div class="upload-info">
+
+
+                    <div class="info-chip">
+
+                        <span>
+                            AI Model
+                        </span>
+
+                        <strong>
+                            Swin Transformer Tiny
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-chip">
+
+                        <span>
+                            Inference Engine
+                        </span>
+
+                        <strong>
+                            OpenVINO™ CPU
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-chip">
+
+                        <span>
+                            Input
+                        </span>
+
+                        <strong>
+                            288 × 288 px
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-chip">
+
+                        <span>
+                            Classes
+                        </span>
+
+                        <strong>
+                            Normal / LUAD / LUSC
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        id="analyzeButton"
+                        class="primary-button"
+                        type="button"
+                        disabled
+                    >
+
+                        ✨ Analyze Image
+
+                    </button>
+
+
+                    <div
+                        id="analysisStatus"
+                        class="status-message"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULT + GRAD-CAM
+        ================================================== -->
+
+        <section
+            class="content-grid"
+            id="result-section"
+        >
+
+
+            <!-- HASIL PEMERIKSAAN -->
+
+            <article class="card result-card">
+
+
+                <div class="section-head">
+
+
+                    <div>
+
+                        <span class="eyebrow">
+                            HASIL TERBARU
+                        </span>
+
+                        <h2>
+                            Hasil Pemeriksaan
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        id="resultBadge"
+                        class="result-badge neutral"
+                    >
+                        Belum ada hasil
+                    </span>
+
+                </div>
+
+
+
+                <div class="result-layout">
+
+
+                    <!-- IMAGE -->
+
+                    <div class="result-image">
+
+                        <img
+                            id="latestImage"
+                            alt="Citra hasil analisis"
+                            hidden
+                        >
+
+                        <div
+                            id="latestImageEmpty"
+                            class="empty-state"
+                        >
+
+                            <strong>
+                                Belum ada gambar
+                            </strong>
+
+                            <span>
+                                Hasil upload terakhir
+                                akan muncul di sini.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- RESULT -->
+
+                    <div class="result-details">
+
+                        <span class="muted">
+                            Prediksi AI
+                        </span>
+
+                        <h3 id="predictionText">
+                            Belum ada hasil
+                        </h3>
+
+
+                        <div class="confidence-row">
+
+                            <span>
+                                Confidence
+                            </span>
+
+                            <strong id="confidenceText">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                id="confidenceBar"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="probabilities">
+
+
+                            <div>
+
+                                <span>
+                                    Normal
+                                </span>
+
+                                <strong id="probNormal">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    LUAD
+                                </span>
+
+                                <strong id="probLuad">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    LUSC
+                                </span>
+
+                                <strong id="probLusc">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- GRAD-CAM -->
+
+            <article class="card gradcam-card">
+
+
+                <div class="section-head">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            EXPLAINABLE AI
+                        </span>
+
+                        <h2>
+                            Grad-CAM
+                        </h2>
+
+                    </div>
+
+                    <span class="soft-badge">
+                        AI Explainability
+                    </span>
+
+                </div>
+
+
+                <div class="gradcam-box">
+
+                    <img
+                        id="gradcamImage"
+                        alt="Grad-CAM visualization"
+                        hidden
+                    >
+
+                    <div
+                        id="gradcamEmpty"
+                        class="empty-state"
+                    >
+
+                        <strong>
+                            Grad-CAM belum tersedia
+                        </strong>
+
+                        <span>
+                            Visualisasi akan muncul
+                            setelah analisis selesai.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p class="helper-text">
+
+                    Heatmap menunjukkan area jaringan
+                    yang paling berkontribusi terhadap
+                    prediksi model.
+
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CLINICAL SUPPORT
+        ================================================== -->
+
+        <section
+            class="card clinical-card"
+            id="clinical-section"
+        >
+
+
+            <div class="section-head">
+
+                <div>
+
+                    <span class="eyebrow">
+                        CLINICAL SUPPORT
+                    </span>
+
+                    <h2>
+                        Langkah Penanganan
+                    </h2>
+
+                    <p>
+                        Informasi umum berdasarkan
+                        hasil klasifikasi AI.
+                    </p>
+
+                </div>
+
+
+                <span class="soft-badge">
+                    Informational
+                </span>
+
+            </div>
+
+
+
+            <div class="clinical-box">
+
+
+                <div class="clinical-icon">
+                    ✚
+                </div>
+
+
+                <div>
+
+                    <strong id="clinicalTitle">
+                        Belum ada hasil analisis
+                    </strong>
+
+                    <p id="clinicalText">
+
+                        Setelah analisis dilakukan,
+                        langkah penanganan berdasarkan
+                        kelas hasil AI akan tampil
+                        di sini.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="clinical-list">
+
+
+                <span>
+                    ✓ Konfirmasi diagnosis
+                </span>
+
+
+                <span>
+                    ✓ Evaluasi klinis dan stadium
+                </span>
+
+
+                <span>
+                    ✓ Konsultasi dengan tenaga medis
+                </span>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DISTRIBUTION + HISTORY
+        ================================================== -->
+
+        <section
+            class="content-grid"
+            id="history-section"
+        >
+
+
+            <!-- DISTRIBUTION -->
+
+            <article class="card">
+
+
+                <div class="section-head">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            DISTRIBUSI
+                        </span>
+
+                        <h2>
+                            Seluruh Analisis
+                        </h2>
+
+                    </div>
+
+
+                    <span class="soft-badge">
+                        Realtime
+                    </span>
+
+                </div>
+
+
+
+                <div class="distribution">
+
+
+                    <div
+                        id="donut"
+                        class="donut"
+                    >
+
+                        <strong id="donutTotal">
+                            0
+                        </strong>
+
+                        <span>
+                            Analisis
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="legend">
+
+
+                        <div>
+
+                            <i class="legend-dot purple"></i>
+
+                            <span>
+                                Adenocarcinoma
+                            </span>
+
+                            <strong id="legendLuad">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="legend-dot orange"></i>
+
+                            <span>
+                                Squamous Cell
+                            </span>
+
+                            <strong id="legendLusc">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="legend-dot green"></i>
+
+                            <span>
+                                Normal
+                            </span>
+
+                            <strong id="legendNormal">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- HISTORY -->
+
+            <article class="card">
+
+
+                <div class="section-head">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            RIWAYAT
+                        </span>
+
+                        <h2>
+                            Analisis Terbaru
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="historyList"
+                    class="history-list"
+                >
+
+                    <div class="empty-history">
+
+                        Belum ada riwayat analisis.
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MODEL INFORMATION
+        ================================================== -->
+
+        <section
+            class="card"
+            id="model-section"
+        >
+
+
+            <div class="section-head">
+
+                <div>
+
+                    <span class="eyebrow">
+                        AI MODEL
+                    </span>
+
+                    <h2>
+                        Model Information
+                    </h2>
+
+                </div>
+
+
+                <span class="soft-badge">
+                    Production
+                </span>
+
+            </div>
+
+
+
+            <div class="model-grid">
+
+
+                <div>
+
+                    <span>
+                        Architecture
+                    </span>
+
+                    <strong>
+                        Swin Transformer Tiny
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Framework
+                    </span>
+
+                    <strong>
+                        PyTorch + timm
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Inference Engine
+                    </span>
+
+                    <strong>
+                        Intel® OpenVINO™
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Device
+                    </span>
+
+                    <strong>
+                        CPU
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Input
+                    </span>
+
+                    <strong>
+                        288 × 288 px
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Classes
+                    </span>
+
+                    <strong>
+                        Normal / LUAD / LUSC
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================== -->
+
+        <footer class="footer">
+
+
+            <div class="footer-brand">
+
+                <strong>
+                    LUNOVA
+                </strong>
+
+                <span>
+                    AI-Powered Lung Cancer Detection
+                </span>
+
+            </div>
+
+
+            <div class="footer-tech">
+
+                <strong>
+                    Intel® AI
+                </strong>
+
+                <span>
+                    OpenVINO™ Technology
+                </span>
+
+            </div>
+
+
+            <p>
+
+                ⚠ Sistem ini merupakan alat bantu
+                analisis dan tidak menggantikan
+                diagnosis tenaga medis.
+
+            </p>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<script src="dashboard.js"></script>
+
+
+</body>
+</html>

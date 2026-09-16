@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LUNOVA | Upload & Analyze</title>
+
+    <link rel="stylesheet" href="upload.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                L
+            </div>
+
+            <div class="brand-text">
+                <h2>LUNOVA</h2>
+                <span>AI Lung Detection</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section">
+
+                <span class="nav-title">
+                    MENU UTAMA
+                </span>
+
+                <a href="../dashboard/dashboard.html"
+                   class="nav-link">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="upload.html"
+                   class="nav-link active">
+                    <span class="nav-icon">＋</span>
+                    <span>Upload & Analyze</span>
+                </a>
+
+                <a href="#"
+                   class="nav-link">
+                    <span class="nav-icon">◈</span>
+                    <span>Hasil Analisis</span>
+                </a>
+
+                <a href="#"
+                   class="nav-link">
+                    <span class="nav-icon">▤</span>
+                    <span>Riwayat Pasien</span>
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <span class="nav-title">
+                    ANALISIS
+                </span>
+
+                <a href="#"
+                   class="nav-link">
+                    <span class="nav-icon">◉</span>
+                    <span>Biomarker Analysis</span>
+                </a>
+
+                <a href="#"
+                   class="nav-link">
+                    <span class="nav-icon">✚</span>
+                    <span>Clinical Support</span>
+                </a>
+
+                <a href="#"
+                   class="nav-link">
+                    <span class="nav-icon">▣</span>
+                    <span>Model Information</span>
+                </a>
+
+                <a href="#"
+                   class="nav-link">
+                    <span class="nav-icon">⚙</span>
+                    <span>Pengaturan</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="intel-card">
+
+                <span>POWERED BY</span>
+
+                <strong>Intel® AI</strong>
+
+                <small>
+                    OpenVINO™ Technology
+                </small>
+
+            </div>
+
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>System Online</strong>
+
+                    <small>
+                        AI Engine Ready
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <!-- MOBILE HEADER -->
+
+        <div class="mobile-header">
+
+            <button
+                class="menu-toggle"
+                id="menuToggle">
+                ☰
+            </button>
+
+            <div class="mobile-brand">
+
+                <strong>LUNOVA</strong>
+
+                <span>
+                    AI Lung Detection
+                </span>
+
+            </div>
+
+            <div class="mobile-status">
+                <span class="status-dot"></span>
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <header class="page-header">
+
+            <div>
+
+                <span class="page-label">
+                    AI ANALYSIS
+                </span>
+
+                <h1>
+                    Upload & Analyze
+                </h1>
+
+                <p>
+                    Upload citra histopatologi H&E untuk dianalisis
+                    menggunakan model AI LUNOVA.
+                </p>
+
+            </div>
+
+
+            <div class="model-ready">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <strong>
+                        Model Ready
+                    </strong>
+
+                    <small>
+                        Swin Transformer Tiny
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             UPLOAD AREA
+        ================================================== -->
+
+        <section class="upload-layout">
+
+
+            <!-- =============================================
+                 UPLOAD CARD
+            ============================================== -->
+
+            <article class="card upload-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            INPUT GAMBAR
+                        </span>
+
+                        <h2>
+                            Citra Histopatologi
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <input
+                    type="file"
+                    id="fileInput"
+                    accept=".jpg,.jpeg,.png,.tif,.tiff"
+                    hidden
+                >
+
+
+                <!-- DROP ZONE -->
+
+                <div
+                    class="drop-zone"
+                    id="dropZone"
+                >
+
+                    <div
+                        class="upload-icon"
+                        id="uploadIcon"
+                    >
+                        ☁
+                    </div>
+
+                    <h3>
+                        Drag & Drop gambar di sini
+                    </h3>
+
+                    <p>
+                        atau klik untuk memilih file
+                    </p>
+
+                    <span>
+                        JPG, JPEG, PNG, TIFF • Maks. 20 MB
+                    </span>
+
+                </div>
+
+
+                <!-- PREVIEW -->
+
+                <div
+                    class="preview-container"
+                    id="previewContainer"
+                    hidden
+                >
+
+                    <div class="preview-header">
+
+                        <div>
+
+                            <span>
+                                Preview Gambar
+                            </span>
+
+                            <strong
+                                id="fileName">
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="removeImage"
+                            class="remove-button"
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+
+                    <div class="preview-image-wrapper">
+
+                        <img
+                            id="previewImage"
+                            src=""
+                            alt="Preview histopatologi"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANALYZE BUTTON -->
+
+                <button
+                    type="button"
+                    id="analyzeButton"
+                    class="primary-button"
+                    disabled
+                >
+
+                    <span class="button-icon">
+                        ✨
+                    </span>
+
+                    Analyze Image
+
+                </button>
+
+
+                <!-- STATUS -->
+
+                <div
+                    class="analysis-status"
+                    id="analysisStatus"
+                ></div>
+
+            </article>
+
+
+            <!-- =============================================
+                 INFORMATION CARD
+            ============================================== -->
+
+            <article class="card information-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            MODEL INFORMASI
+                        </span>
+
+                        <h2>
+                            Analisis AI
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-list">
+
+                    <div class="info-item">
+
+                        <div class="info-icon blue">
+                            ◈
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Model
+                            </span>
+
+                            <strong>
+                                Swin Transformer Tiny
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon purple">
+                            ◎
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Input
+                            </span>
+
+                            <strong>
+                                288 × 288 px
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon green">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Kelas
+                            </span>
+
+                            <strong>
+                                Normal / LUAD / LUSC
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon orange">
+                            ◉
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Inference
+                            </span>
+
+                            <strong>
+                                PyTorch
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notice">
+
+                    <strong>
+                        Catatan
+                    </strong>
+
+                    <p>
+                        Sistem menggunakan AI sebagai alat bantu
+                        analisis. Hasil harus dikonfirmasi oleh
+                        tenaga medis.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =================================================
+             HOW IT WORKS
+        ================================================== -->
+
+        <section class="card process-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="section-label">
+                        PROSES ANALISIS
+                    </span>
+
+                    <h2>
+                        Cara Kerja LUNOVA
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="process-grid">
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        1
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Upload
+                        </strong>
+
+                        <span>
+                            Pilih citra histopatologi H&E.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        2
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Preprocessing
+                        </strong>
+
+                        <span>
+                            Gambar disiapkan pada ukuran 288×288.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        3
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            AI Analysis
+                        </strong>
+
+                        <span>
+                            Swin Transformer menganalisis gambar.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-line"></div>
+
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        4
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Result
+                        </strong>
+
+                        <span>
+                            Prediksi, confidence, dan Grad-CAM.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="footer">
+
+            <div>
+
+                <strong>
+                    LUNOVA
+                </strong>
+
+                <span>
+                    AI-Powered Lung Cancer Detection
+                </span>
+
+            </div>
+
+            <p>
+                Sistem ini merupakan alat bantu analisis
+                dan bukan pengganti diagnosis tenaga medis.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script src="upload.js"></script>
+
+</body>
+
+</html>
